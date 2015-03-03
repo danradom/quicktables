@@ -1,4 +1,4 @@
-# quicktables
+# quicktables is no longer being developed and has not been developed in many years
 
 quicktables is an iptables firewall and firewall / nat (gateway) script
 generator.  it was created to provide a secure set of iptables rules
