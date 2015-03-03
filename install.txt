@@ -1,0 +1,30 @@
+redhat users should use the install.sh-redhat file to install
+quicktables.  running that installation script copies the rc.firewall to
+/usr/local/sbin, copies the init script to /etc/rc.d/init.d, and tells
+redhat to start quicktables when the system boots up.
+
+to run the install script simply type ./install.sh-redhat from within
+the contrib/redhat directory.
+
+the init script also lets you use the "service" command to start and
+restart quicktables.  it also supports two different status views
+using the status and status_nat commands.  to see all the options simply
+run ...
+
+	/sbin/service quicktables
+
+to manually install quicktables issue the following commands ...
+
+	cp rc.firewall /usr/local/sbin
+	chown root /usr/local/sbin/rc.firewall
+	chmod 744 /usr/local/sbin/rc.firewall
+
+you will then need to add "/usr/local/sbin/rc.firewall" to rc.local.
+the location and existance of rc.local vary from distribution to
+distribution.  you can try issuing the following command to find
+rc.local ...
+
+	find / -name rc.local -print
+
+once you find the file simply add "/usr/local/sbin/rc.firewall" to the
+very bottom of it.
